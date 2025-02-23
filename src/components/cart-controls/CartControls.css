@@ -1,0 +1,19 @@
+
+.cart-controls-container {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .clear-cart {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .clear-cart:hover {
+    background-color: #c82333;
+  }
+  
