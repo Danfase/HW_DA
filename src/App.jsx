@@ -4,7 +4,7 @@ import { CartProvider } from "./context/CartContext";
 import ProductList from "./components/product-list/ProductList";
 import CartControls from "./components/cart-controls/CartControls";
 import CartPage from "./pages/CartPage";
-import "./styles.css";
+import "./style.css";
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -20,12 +20,25 @@ const App = () => {
       });
   }, []);
 
+  const categories = ["all", "men's clothing", "women's clothing", "electronics", "jewelery"];
+
   return (
     <div className="container">
       <h1>Store</h1>
       <nav>
         <Link to="/">Home</Link> | <Link to="/cart">Cart</Link>
       </nav>
+      <div className="category-buttons">
+        {categories.map((cat) => (
+          <button 
+            key={cat} 
+            onClick={() => setCategory(cat)} 
+            className={category === cat ? "category-btn active" : "category-btn"}
+          >
+            {cat.charAt(0).toUpperCase() + cat.slice(1)}
+          </button>
+        ))}
+      </div>
       <Routes>
         <Route path="/" element={
           <>
